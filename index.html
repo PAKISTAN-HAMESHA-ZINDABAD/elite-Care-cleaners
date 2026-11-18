@@ -1,0 +1,2002 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Elite Care Cleaners | Lahore — Premium Home Deep Cleaning</title>
+    <meta
+      name="description"
+      content="Premium Western-style deep cleaning for luxury properties in Lahore. Specialty in Spanish-style homes, modern elevations, and high-rise glass."
+    />
+    <meta property="og:title" content="Elite Care Cleaners | Lahore" />
+    <meta
+      property="og:description"
+      content="Premium Western-style deep cleaning for luxury properties in Lahore. Calculate your estimate and book directly on WhatsApp."
+    />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <!-- Google Fonts: Plus Jakarta Sans (Headings) & Inter (Body) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      /* ======================================================================
+         ELITE CARE CLEANERS | LAHORE — DESIGN TOKENS & BASE STYLES
+         Palette: Deep Ocean Navy (#0B2A4A), Fresh Aqua (#1BA8C7),
+                  Soft Mint (#E8F6F6), Crisp White (#FFFFFF),
+                  Slate (#4A6572), Success Green (#2BB58A)
+         ====================================================================== */
+      :root {
+        --navy: #0b2a4a;
+        --navy-deep: #071e36;
+        --aqua: #1ba8c7;
+        --aqua-dark: #158fa9;
+        --aqua-tint: rgba(27, 168, 199, 0.12);
+        --mint: #e8f6f6;
+        --mint-soft: #f3fafa;
+        --white: #ffffff;
+        --slate: #4a6572;
+        --slate-light: #7c929d;
+        --border-subtle: #d9ecee;
+        --border-soft: #e6eff1;
+        --success: #2bb58a;
+        --success-tint: rgba(43, 181, 138, 0.12);
+        --error: #c93b47;
+        --error-tint: #fdf2f3;
+        --shadow-card: 0 10px 30px -10px rgba(11, 42, 74, 0.08);
+        --shadow-card-hover: 0 18px 36px -12px rgba(11, 42, 74, 0.14);
+        --shadow-hero: 0 24px 48px -16px rgba(11, 42, 74, 0.16);
+        --radius-card: 18px;
+        --radius-frame: 20px;
+        --radius-control: 16px;
+        --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+      }
+
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+        -webkit-text-size-adjust: 100%;
+      }
+
+      body {
+        margin: 0;
+        background-color: var(--white);
+        color: var(--slate);
+        font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+        font-size: 16px;
+        line-height: 1.6;
+        overflow-x: hidden;
+        -webkit-font-smoothing: antialiased;
+      }
+
+      h1,
+      h2,
+      h3,
+      .font-heading {
+        font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+        color: var(--navy);
+        margin: 0;
+        letter-spacing: -0.02em;
+      }
+
+      p {
+        margin: 0;
+      }
+
+      button,
+      input,
+      textarea {
+        font-family: inherit;
+      }
+
+      img {
+        display: block;
+        max-width: 100%;
+      }
+
+      /* Focus accessibility */
+      :focus-visible {
+        outline: 2px solid var(--aqua);
+        outline-offset: 2px;
+      }
+
+      /* Layout Container */
+      .container {
+        width: 100%;
+        max-width: 1120px;
+        margin-left: auto;
+        margin-right: auto;
+        padding-left: 16px;
+        padding-right: 16px;
+      }
+
+      @media (min-width: 640px) {
+        .container {
+          padding-left: 24px;
+          padding-right: 24px;
+        }
+      }
+
+      @media (min-width: 1024px) {
+        .container {
+          padding-left: 32px;
+          padding-right: 32px;
+        }
+      }
+
+      /* Scroll Reveal Animation */
+      .reveal {
+        opacity: 0;
+        transform: translateY(18px);
+        transition: opacity 0.6s var(--ease-out), transform 0.6s var(--ease-out);
+      }
+
+      .reveal.is-visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      /* ======================================================================
+         1. HERO SECTION
+         ====================================================================== */
+      .hero {
+        position: relative;
+        overflow: hidden;
+        background: linear-gradient(180deg, var(--mint-soft) 0%, var(--white) 100%);
+        padding: 40px 0 48px;
+      }
+
+      @media (min-width: 900px) {
+        .hero {
+          padding: 72px 0 76px;
+        }
+      }
+
+      /* Floating subtle bubbles & sparkles in the hero background */
+      .hero-bg-shapes {
+        position: absolute;
+        inset: 0;
+        pointer-events: none;
+        overflow: hidden;
+        z-index: 0;
+      }
+
+      .bg-bubble {
+        position: absolute;
+        border-radius: 9999px;
+        background: radial-gradient(
+          circle at 30% 30%,
+          rgba(27, 168, 199, 0.16),
+          rgba(232, 246, 246, 0.05) 70%
+        );
+        border: 1px solid rgba(27, 168, 199, 0.14);
+        animation: floatGentle 9s ease-in-out infinite;
+      }
+
+      .bg-bubble--1 {
+        width: 140px;
+        height: 140px;
+        top: -28px;
+        left: -32px;
+        animation-delay: 0s;
+      }
+
+      .bg-bubble--2 {
+        width: 68px;
+        height: 68px;
+        top: 10%;
+        right: -18px;
+        animation-delay: -3s;
+        animation-duration: 11s;
+      }
+
+      @media (min-width: 900px) {
+        .bg-bubble--2 {
+          top: 16%;
+          left: 44%;
+          right: auto;
+        }
+      }
+
+      .bg-bubble--3 {
+        width: 110px;
+        height: 110px;
+        bottom: 16px;
+        right: 6%;
+        animation-delay: -5s;
+        animation-duration: 10s;
+      }
+
+      .bg-sparkle {
+        position: absolute;
+        color: var(--aqua);
+        opacity: 0.28;
+        animation: sparkleDrift 7s ease-in-out infinite;
+      }
+
+      .bg-sparkle--1 {
+        top: 14%;
+        right: 12%;
+        animation-delay: -1s;
+      }
+
+      .bg-sparkle--2 {
+        bottom: 18%;
+        left: 8%;
+        animation-delay: -4s;
+      }
+
+      .bg-sparkle--3 {
+        top: 62%;
+        right: 8%;
+        animation-delay: -2.5s;
+      }
+
+      @media (min-width: 900px) {
+        .bg-sparkle--3 {
+          top: 54%;
+          left: 48%;
+          right: auto;
+        }
+      }
+
+      @keyframes floatGentle {
+        0%,
+        100% {
+          transform: translate3d(0, 0, 0) scale(1);
+        }
+        50% {
+          transform: translate3d(0, -12px, 0) scale(1.03);
+        }
+      }
+
+      @keyframes sparkleDrift {
+        0%,
+        100% {
+          transform: translate3d(0, 0, 0) rotate(0deg) scale(0.95);
+          opacity: 0.22;
+        }
+        50% {
+          transform: translate3d(4px, -10px, 0) rotate(12deg) scale(1.1);
+          opacity: 0.42;
+        }
+      }
+
+      .hero-grid {
+        position: relative;
+        z-index: 1;
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 32px;
+        align-items: center;
+      }
+
+      @media (min-width: 900px) {
+        .hero-grid {
+          grid-template-columns: 1.02fr 0.98fr;
+          gap: 56px;
+        }
+      }
+
+      .hero-copy {
+        animation: heroFadeIn 0.7s var(--ease-out) both;
+      }
+
+      @keyframes heroFadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(14px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .hero-eyebrow {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        font-size: 13px;
+        font-weight: 600;
+        color: var(--aqua-dark);
+        letter-spacing: 0.02em;
+        margin-bottom: 14px;
+      }
+
+      .hero-title {
+        font-size: clamp(2rem, 4.2vw, 3.25rem);
+        font-weight: 800;
+        line-height: 1.12;
+        color: var(--navy);
+        text-wrap: balance;
+        margin-bottom: 18px;
+      }
+
+      .hero-tagline {
+        font-size: clamp(1rem, 1.5vw, 1.1875rem);
+        line-height: 1.65;
+        color: var(--slate);
+        max-width: 54ch;
+        margin-bottom: 18px;
+      }
+
+      .hero-specialty {
+        display: inline-flex;
+        align-items: flex-start;
+        gap: 10px;
+        padding: 12px 16px;
+        background-color: var(--mint);
+        border: 1px solid var(--border-subtle);
+        border-radius: 14px;
+        font-size: 14px;
+        font-weight: 500;
+        color: var(--navy);
+        line-height: 1.5;
+      }
+
+      .hero-specialty svg {
+        flex-shrink: 0;
+        margin-top: 2px;
+        color: var(--aqua);
+      }
+
+      /* Hero Image Container with Soft Aqua Glow */
+      .hero-media {
+        position: relative;
+        animation: heroFadeIn 0.85s var(--ease-out) 0.08s both;
+      }
+
+      .hero-glow {
+        position: absolute;
+        inset: -14px -12px -18px -12px;
+        border-radius: 28px;
+        background: radial-gradient(
+          circle at 60% 45%,
+          rgba(27, 168, 199, 0.24),
+          rgba(232, 246, 246, 0.65) 55%,
+          transparent 80%
+        );
+        filter: blur(18px);
+        z-index: 0;
+        pointer-events: none;
+      }
+
+      .hero-frame {
+        position: relative;
+        z-index: 1;
+        border-radius: var(--radius-frame);
+        overflow: hidden;
+        background-color: var(--mint);
+        box-shadow: var(--shadow-hero);
+        border: 1px solid rgba(255, 255, 255, 0.9);
+        aspect-ratio: 4 / 3;
+      }
+
+      .hero-photo {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center 20%;
+      }
+
+      .hero-svg-fallback {
+        display: none;
+        width: 100%;
+        height: 100%;
+      }
+
+      .hero-frame.is-fallback .hero-photo {
+        display: none;
+      }
+
+      .hero-frame.is-fallback .hero-svg-fallback {
+        display: block;
+      }
+
+      /* Floating Trust Badge */
+      .hero-badge {
+        position: absolute;
+        left: 10px;
+        bottom: 10px;
+        z-index: 2;
+        display: inline-flex;
+        align-items: center;
+        gap: 7px;
+        background-color: rgba(255, 255, 255, 0.96);
+        backdrop-filter: blur(8px);
+        border: 1px solid var(--border-subtle);
+        border-radius: 12px;
+        padding: 7px 11px;
+        box-shadow: 0 10px 24px -8px rgba(11, 42, 74, 0.18);
+        color: var(--navy);
+        font-family: 'Plus Jakarta Sans', sans-serif;
+        font-size: 12px;
+        font-weight: 700;
+        line-height: 1.25;
+      }
+
+      @media (min-width: 640px) {
+        .hero-badge {
+          left: 18px;
+          bottom: 18px;
+          gap: 9px;
+          border-radius: 14px;
+          padding: 11px 16px;
+          font-size: 14px;
+        }
+      }
+
+      .hero-badge-icon {
+        width: 24px;
+        height: 24px;
+        border-radius: 8px;
+        background-color: var(--mint);
+        color: var(--aqua);
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+      }
+
+      @media (min-width: 640px) {
+        .hero-badge-icon {
+          width: 28px;
+          height: 28px;
+          border-radius: 10px;
+        }
+      }
+
+      /* ======================================================================
+         2. SERVICE CARDS SECTION
+         ====================================================================== */
+      .services-section {
+        padding: 48px 0 56px;
+        background-color: var(--white);
+      }
+
+      @media (min-width: 900px) {
+        .services-section {
+          padding: 64px 0 72px;
+        }
+      }
+
+      .section-header {
+        margin-bottom: 28px;
+      }
+
+      @media (min-width: 900px) {
+        .section-header {
+          margin-bottom: 36px;
+        }
+      }
+
+      .section-title {
+        font-size: clamp(1.5rem, 2.8vw, 2.125rem);
+        font-weight: 700;
+        line-height: 1.2;
+        margin-bottom: 8px;
+      }
+
+      .section-subtitle {
+        font-size: 15.5px;
+        color: var(--slate);
+        max-width: 58ch;
+      }
+
+      .services-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 16px;
+      }
+
+      @media (min-width: 640px) {
+        .services-grid {
+          grid-template-columns: repeat(2, 1fr);
+          gap: 20px;
+        }
+      }
+
+      @media (min-width: 1024px) {
+        .services-grid {
+          grid-template-columns: repeat(3, 1fr);
+          gap: 24px;
+        }
+      }
+
+      .service-card {
+        background-color: var(--white);
+        border: 1px solid var(--border-soft);
+        border-radius: var(--radius-card);
+        padding: 24px;
+        box-shadow: var(--shadow-card);
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        gap: 16px;
+        transition: transform 0.2s var(--ease-out), box-shadow 0.2s var(--ease-out),
+          border-color 0.2s var(--ease-out);
+      }
+
+      .service-card:hover {
+        transform: translateY(-4px);
+        box-shadow: var(--shadow-card-hover);
+        border-color: rgba(27, 168, 199, 0.35);
+      }
+
+      .service-icon-box {
+        width: 48px;
+        height: 48px;
+        border-radius: 14px;
+        background-color: var(--mint);
+        color: var(--aqua);
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 14px;
+      }
+
+      .service-name {
+        font-size: 18px;
+        font-weight: 700;
+        line-height: 1.3;
+        color: var(--navy);
+        margin-bottom: 8px;
+      }
+
+      .service-desc {
+        font-size: 14.5px;
+        line-height: 1.55;
+        color: var(--slate);
+      }
+
+      .service-price {
+        padding-top: 14px;
+        border-top: 1px solid var(--border-soft);
+        font-family: 'Plus Jakarta Sans', sans-serif;
+        font-size: 15.5px;
+        font-weight: 700;
+        color: var(--navy);
+        font-variant-numeric: tabular-nums;
+      }
+
+      .service-price-unit {
+        font-family: 'Inter', sans-serif;
+        font-size: 13.5px;
+        font-weight: 500;
+        color: var(--slate);
+      }
+
+      .services-note {
+        margin-top: 22px;
+        display: flex;
+        align-items: flex-start;
+        gap: 10px;
+        padding: 14px 18px;
+        background-color: var(--mint-soft);
+        border: 1px solid var(--border-subtle);
+        border-radius: 14px;
+        font-size: 14px;
+        font-weight: 500;
+        color: var(--navy);
+      }
+
+      .services-note svg {
+        color: var(--aqua);
+        flex-shrink: 0;
+        margin-top: 2px;
+      }
+
+      /* ======================================================================
+         3–6. BOOKING FLOW WRAPPER (CALCULATOR + ADDRESS + PHONE + WHATSAPP)
+         ====================================================================== */
+      .booking-section {
+        background-color: var(--mint);
+        padding: 48px 0 64px;
+      }
+
+      @media (min-width: 900px) {
+        .booking-section {
+          padding: 68px 0 84px;
+        }
+      }
+
+      .booking-container {
+        max-width: 820px;
+      }
+
+      .calculator-card {
+        background-color: var(--white);
+        border-radius: var(--radius-frame);
+        border: 1px solid var(--border-subtle);
+        box-shadow: var(--shadow-card);
+        padding: 16px 14px;
+      }
+
+      @media (min-width: 640px) {
+        .calculator-card {
+          padding: 28px;
+        }
+      }
+
+      .calculator-list {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+      }
+
+      .calc-row {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        padding: 14px;
+        border-radius: var(--radius-control);
+        border: 1.5px solid var(--border-soft);
+        background-color: var(--white);
+        transition: border-color 0.2s var(--ease-out), background-color 0.2s var(--ease-out),
+          box-shadow 0.2s var(--ease-out);
+      }
+
+      @media (min-width: 680px) {
+        .calc-row {
+          flex-direction: row;
+          align-items: center;
+          justify-content: space-between;
+          gap: 20px;
+          padding: 16px 20px;
+        }
+      }
+
+      .calc-row.is-active {
+        border-color: var(--aqua);
+        background-color: #f6fcfd;
+        box-shadow: 0 6px 18px -10px rgba(27, 168, 199, 0.35);
+      }
+
+      .calc-info {
+        flex: 1;
+        min-width: 0;
+      }
+
+      .calc-title {
+        font-family: 'Plus Jakarta Sans', sans-serif;
+        font-size: 16px;
+        font-weight: 700;
+        color: var(--navy);
+        line-height: 1.3;
+        margin-bottom: 3px;
+      }
+
+      .calc-meta {
+        font-size: 13.5px;
+        color: var(--slate);
+        font-variant-numeric: tabular-nums;
+      }
+
+      .calc-meta-unit {
+        color: var(--aqua-dark);
+        font-weight: 600;
+      }
+
+      .calc-controls-wrap {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 8px;
+        width: 100%;
+      }
+
+      @media (min-width: 680px) {
+        .calc-controls-wrap {
+          width: auto;
+          justify-content: flex-end;
+          gap: 22px;
+          flex-shrink: 0;
+        }
+      }
+
+      /* Stepper: [ − ]  0  [ + ] */
+      .stepper {
+        display: inline-flex;
+        align-items: center;
+        gap: 4px;
+        background-color: var(--mint-soft);
+        border: 1px solid var(--border-subtle);
+        border-radius: 14px;
+        padding: 4px;
+        flex-shrink: 0;
+      }
+
+      @media (min-width: 680px) {
+        .stepper {
+          gap: 6px;
+        }
+      }
+
+      .stepper-btn {
+        width: 44px;
+        height: 44px;
+        border: none;
+        border-radius: 10px;
+        background-color: var(--white);
+        color: var(--navy);
+        font-size: 20px;
+        font-weight: 600;
+        line-height: 1;
+        cursor: pointer;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 1px 3px rgba(11, 42, 74, 0.08);
+        transition: background-color 0.16s var(--ease-out), color 0.16s var(--ease-out),
+          transform 0.12s var(--ease-out), opacity 0.16s var(--ease-out);
+        user-select: none;
+        -webkit-tap-highlight-color: transparent;
+      }
+
+      .stepper-btn:hover:not(:disabled) {
+        background-color: var(--aqua);
+        color: var(--white);
+      }
+
+      .stepper-btn:active:not(:disabled) {
+        transform: scale(0.94);
+      }
+
+      .stepper-btn:disabled {
+        background-color: #eef3f5;
+        color: #a6b7bf;
+        box-shadow: none;
+        cursor: not-allowed;
+        opacity: 0.75;
+      }
+
+      .stepper-value {
+        min-width: 44px;
+        text-align: center;
+        font-family: 'Plus Jakarta Sans', sans-serif;
+        font-size: 16px;
+        font-weight: 700;
+        color: var(--navy);
+        font-variant-numeric: tabular-nums;
+      }
+
+      .stepper-input {
+        width: 56px;
+        height: 40px;
+        border: 1px solid var(--border-subtle);
+        border-radius: 10px;
+        background-color: var(--white);
+        color: var(--navy);
+        font-family: 'Plus Jakarta Sans', sans-serif;
+        font-size: 15px;
+        font-weight: 700;
+        text-align: center;
+        font-variant-numeric: tabular-nums;
+        padding: 0 4px;
+        -moz-appearance: textfield;
+      }
+
+      @media (min-width: 680px) {
+        .stepper-input {
+          width: 68px;
+          font-size: 15.5px;
+          padding: 0 6px;
+        }
+      }
+
+      .stepper-input::-webkit-outer-spin-button,
+      .stepper-input::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+      }
+
+      .stepper-input:focus {
+        outline: none;
+        border-color: var(--aqua);
+        box-shadow: 0 0 0 3px rgba(27, 168, 199, 0.18);
+      }
+
+      .calc-line-total {
+        text-align: right;
+        font-family: 'Plus Jakarta Sans', sans-serif;
+        font-size: 14.5px;
+        font-weight: 700;
+        color: var(--slate-light);
+        font-variant-numeric: tabular-nums;
+        white-space: nowrap;
+        flex-shrink: 1;
+        transition: color 0.2s var(--ease-out);
+      }
+
+      @media (min-width: 680px) {
+        .calc-line-total {
+          min-width: 96px;
+          font-size: 15.5px;
+          flex-shrink: 0;
+        }
+      }
+
+      .calc-row.is-active .calc-line-total {
+        color: var(--navy);
+      }
+
+      /* Estimated Total Box */
+      .total-box {
+        margin-top: 20px;
+        padding: 20px;
+        border-radius: var(--radius-control);
+        background-color: var(--navy);
+        color: var(--white);
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+      }
+
+      .total-row {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: baseline;
+        justify-content: space-between;
+        gap: 8px 16px;
+      }
+
+      .total-label {
+        font-family: 'Plus Jakarta Sans', sans-serif;
+        font-size: 17px;
+        font-weight: 600;
+        color: rgba(255, 255, 255, 0.92);
+      }
+
+      .total-amount {
+        font-family: 'Plus Jakarta Sans', sans-serif;
+        font-size: clamp(1.5rem, 3.2vw, 2rem);
+        font-weight: 800;
+        color: var(--white);
+        font-variant-numeric: tabular-nums;
+        letter-spacing: -0.02em;
+      }
+
+      .total-note {
+        font-size: 13px;
+        color: rgba(232, 246, 246, 0.8);
+      }
+
+      /* ======================================================================
+         4 & 5. ADDRESS & PHONE INPUTS + 6. WHATSAPP BUTTON
+         ====================================================================== */
+      .booking-form-card {
+        margin-top: 20px;
+        background-color: var(--white);
+        border-radius: var(--radius-frame);
+        border: 1px solid var(--border-subtle);
+        box-shadow: var(--shadow-card);
+        padding: 22px 16px;
+        display: flex;
+        flex-direction: column;
+        gap: 18px;
+      }
+
+      @media (min-width: 640px) {
+        .booking-form-card {
+          padding: 28px;
+          gap: 20px;
+        }
+      }
+
+      .field-group {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+      }
+
+      .field-label {
+        font-family: 'Plus Jakarta Sans', sans-serif;
+        font-size: 15px;
+        font-weight: 700;
+        color: var(--navy);
+      }
+
+      .field-input {
+        width: 100%;
+        border: 1.5px solid var(--border-subtle);
+        border-radius: 14px;
+        padding: 13px 16px;
+        font-size: 16px;
+        line-height: 1.5;
+        color: var(--navy);
+        background-color: var(--white);
+        transition: border-color 0.18s var(--ease-out), box-shadow 0.18s var(--ease-out);
+      }
+
+      .field-input::placeholder {
+        color: #8ba0aa;
+      }
+
+      .field-input:focus {
+        outline: none;
+        border-color: var(--aqua);
+        box-shadow: 0 0 0 3px rgba(27, 168, 199, 0.18);
+      }
+
+      .field-input.is-invalid {
+        border-color: var(--error);
+        background-color: var(--error-tint);
+      }
+
+      textarea.field-input {
+        resize: vertical;
+        min-height: 76px;
+      }
+
+      .field-hint {
+        font-size: 13px;
+        color: var(--slate);
+      }
+
+      .form-error {
+        display: none;
+        align-items: flex-start;
+        gap: 10px;
+        padding: 12px 15px;
+        border-radius: 12px;
+        background-color: var(--error-tint);
+        border: 1px solid rgba(201, 59, 71, 0.28);
+        color: var(--error);
+        font-size: 14px;
+        font-weight: 500;
+        line-height: 1.45;
+      }
+
+      .form-error.is-visible {
+        display: flex;
+      }
+
+      .form-error svg {
+        flex-shrink: 0;
+        margin-top: 2px;
+      }
+
+      /* Primary & Only Action Button on the Page */
+      .whatsapp-btn {
+        width: 100%;
+        min-height: 56px;
+        padding: 15px 24px;
+        border: none;
+        border-radius: 16px;
+        background-color: var(--aqua);
+        color: var(--white);
+        font-family: 'Plus Jakarta Sans', sans-serif;
+        font-size: 17px;
+        font-weight: 700;
+        cursor: pointer;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        box-shadow: 0 12px 24px -10px rgba(27, 168, 199, 0.55);
+        transition: background-color 0.18s var(--ease-out), transform 0.15s var(--ease-out),
+          box-shadow 0.18s var(--ease-out);
+        -webkit-tap-highlight-color: transparent;
+      }
+
+      .whatsapp-btn:hover {
+        background-color: var(--aqua-dark);
+        transform: translateY(-2px);
+        box-shadow: 0 16px 28px -10px rgba(27, 168, 199, 0.65);
+      }
+
+      .whatsapp-btn:active {
+        transform: translateY(0) scale(0.99);
+      }
+
+      /* ======================================================================
+         7. TINY FOOTER
+         ====================================================================== */
+      .site-footer {
+        background-color: var(--white);
+        border-top: 1px solid var(--border-soft);
+        padding: 24px 16px;
+        text-align: center;
+        font-size: 13.5px;
+        color: var(--slate);
+      }
+
+      /* ======================================================================
+         CONFIRMATION MODAL WITH ANIMATED CHECKMARK
+         ====================================================================== */
+      .modal-backdrop {
+        position: fixed;
+        inset: 0;
+        z-index: 50;
+        background-color: rgba(11, 42, 74, 0.52);
+        backdrop-filter: blur(4px);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 16px;
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+        transition: opacity 0.24s var(--ease-out), visibility 0.24s var(--ease-out);
+      }
+
+      .modal-backdrop.is-open {
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
+      }
+
+      .modal-dialog {
+        width: 100%;
+        max-width: 420px;
+        background-color: var(--white);
+        border-radius: var(--radius-frame);
+        padding: 32px 24px 26px;
+        text-align: center;
+        box-shadow: 0 28px 60px -16px rgba(11, 42, 74, 0.35);
+        transform: scale(0.93) translateY(10px);
+        transition: transform 0.28s var(--ease-out);
+      }
+
+      .modal-backdrop.is-open .modal-dialog {
+        transform: scale(1) translateY(0);
+      }
+
+      .checkmark-wrap {
+        width: 72px;
+        height: 72px;
+        margin: 0 auto 20px;
+        border-radius: 9999px;
+        background-color: var(--success-tint);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .checkmark-svg {
+        width: 52px;
+        height: 52px;
+      }
+
+      .checkmark-circle {
+        stroke: var(--success);
+        stroke-width: 2.5;
+        stroke-dasharray: 166;
+        stroke-dashoffset: 166;
+        fill: none;
+      }
+
+      .checkmark-tick {
+        stroke: var(--success);
+        stroke-width: 3.2;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        stroke-dasharray: 48;
+        stroke-dashoffset: 48;
+        fill: none;
+      }
+
+      .modal-backdrop.is-open .checkmark-circle {
+        animation: drawCircle 0.5s var(--ease-out) 0.08s forwards;
+      }
+
+      .modal-backdrop.is-open .checkmark-tick {
+        animation: drawTick 0.35s var(--ease-out) 0.42s forwards;
+      }
+
+      @keyframes drawCircle {
+        to {
+          stroke-dashoffset: 0;
+        }
+      }
+
+      @keyframes drawTick {
+        to {
+          stroke-dashoffset: 0;
+        }
+      }
+
+      .modal-message {
+        font-family: 'Plus Jakarta Sans', sans-serif;
+        font-size: 18px;
+        font-weight: 700;
+        line-height: 1.45;
+        color: var(--navy);
+        margin-bottom: 22px;
+      }
+
+      .modal-close-btn {
+        min-height: 46px;
+        min-width: 140px;
+        padding: 11px 28px;
+        border: 1.5px solid var(--border-subtle);
+        border-radius: 14px;
+        background-color: var(--mint-soft);
+        color: var(--navy);
+        font-family: 'Plus Jakarta Sans', sans-serif;
+        font-size: 15px;
+        font-weight: 700;
+        cursor: pointer;
+        transition: background-color 0.16s var(--ease-out), border-color 0.16s var(--ease-out);
+      }
+
+      .modal-close-btn:hover {
+        background-color: var(--mint);
+        border-color: var(--aqua);
+      }
+
+      /* Respect reduced motion preferences */
+      @media (prefers-reduced-motion: reduce) {
+        html {
+          scroll-behavior: auto;
+        }
+        .bg-bubble,
+        .bg-sparkle,
+        .hero-copy,
+        .hero-media {
+          animation: none !important;
+        }
+        .reveal {
+          opacity: 1;
+          transform: none;
+          transition: none;
+        }
+        .service-card,
+        .modal-backdrop,
+        .modal-dialog {
+          transition: none;
+        }
+        .modal-backdrop.is-open .checkmark-circle,
+        .modal-backdrop.is-open .checkmark-tick {
+          animation: none;
+          stroke-dashoffset: 0;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <main>
+      <!-- ====================================================================
+           1. HERO SECTION
+           ==================================================================== -->
+      <section class="hero" aria-labelledby="hero-heading">
+        <!-- Subtle floating bubbles and sparkle accents -->
+        <div class="hero-bg-shapes" aria-hidden="true">
+          <div class="bg-bubble bg-bubble--1"></div>
+          <div class="bg-bubble bg-bubble--2"></div>
+          <div class="bg-bubble bg-bubble--3"></div>
+          <svg class="bg-sparkle bg-sparkle--1" width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 2L14.2 9.8L22 12L14.2 14.2L12 22L9.8 14.2L2 12L9.8 9.8L12 2Z" />
+          </svg>
+          <svg class="bg-sparkle bg-sparkle--2" width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 2L14.2 9.8L22 12L14.2 14.2L12 22L9.8 14.2L2 12L9.8 9.8L12 2Z" />
+          </svg>
+          <svg class="bg-sparkle bg-sparkle--3" width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 2L14.2 9.8L22 12L14.2 14.2L12 22L9.8 14.2L2 12L9.8 9.8L12 2Z" />
+          </svg>
+        </div>
+
+        <div class="container hero-grid">
+          <div class="hero-copy">
+            <p class="hero-eyebrow">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                <path d="m9 12 2 2 4-4" />
+              </svg>
+              Lahore Home Deep Cleaning Specialists
+            </p>
+            <h1 id="hero-heading" class="hero-title">Elite Care Cleaners | Lahore</h1>
+            <p class="hero-tagline">
+              Premium Western-style deep cleaning for luxury properties. We clean every fixture,
+              glass, and corner with maximum precision.
+            </p>
+            <p class="hero-specialty">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
+                <polyline points="9 22 9 12 15 12 15 22" />
+              </svg>
+              <span>Specialty: Spanish-style and modern elevation homes, high-rise glass.</span>
+            </p>
+          </div>
+
+          <div class="hero-media">
+            <div class="hero-glow" aria-hidden="true"></div>
+            <div class="hero-frame" id="hero-frame">
+              <img
+                src="/src/assets/images/elite_cleaners_team_1795001477667.jpg"
+                alt="Three smiling Elite Care Cleaners professionals in navy polo shirts inside a bright modern Lahore home"
+                class="hero-photo"
+                referrerpolicy="no-referrer"
+                onerror="document.getElementById('hero-frame').classList.add('is-fallback')"
+              />
+              <!-- Clean flat SVG illustration fallback if image fails to load -->
+              <svg
+                class="hero-svg-fallback"
+                viewBox="0 0 600 450"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                role="img"
+                aria-label="Illustration of three Elite Care Cleaners professionals"
+              >
+                <rect width="600" height="450" fill="#E8F6F6" />
+                <rect x="48" y="42" width="504" height="270" rx="18" fill="#FFFFFF" opacity="0.72" />
+                <rect x="80" y="68" width="180" height="190" rx="10" fill="#D9ECEE" opacity="0.65" />
+                <rect x="340" y="68" width="180" height="190" rx="10" fill="#D9ECEE" opacity="0.65" />
+                <!-- Cleaner 1 (Left) -->
+                <circle cx="170" cy="182" r="34" fill="#E5B99B" />
+                <path d="M138 176C138 154 152 144 170 144C188 144 202 154 202 176C194 166 150 166 138 176Z" fill="#0B2A4A" />
+                <path d="M114 276C114 242 138 224 170 224C202 224 226 242 226 276V410H114V276Z" fill="#0B2A4A" />
+                <circle cx="194" cy="264" r="8" fill="#1BA8C7" />
+                <!-- Cleaner 3 (Right) -->
+                <circle cx="430" cy="182" r="34" fill="#DBA98B" />
+                <path d="M398 176C398 154 412 144 430 144C448 144 462 154 462 176C454 166 410 166 398 176Z" fill="#0B2A4A" />
+                <path d="M374 276C374 242 398 224 430 224C462 224 486 242 486 276V410H374V276Z" fill="#0B2A4A" />
+                <circle cx="454" cy="264" r="8" fill="#1BA8C7" />
+                <!-- Cleaner 2 (Center) -->
+                <circle cx="300" cy="196" r="36" fill="#EAC1A6" />
+                <path d="M266 190C266 164 282 154 300 154C318 154 334 164 334 190C320 176 280 176 266 190Z" fill="#0B2A4A" />
+                <path d="M242 288C242 252 268 234 300 234C332 234 358 252 358 288V415H242V288Z" fill="#0B2A4A" />
+                <rect x="316" y="274" width="22" height="10" rx="4" fill="#1BA8C7" />
+                <!-- Squeegee / Cleaning tool accent -->
+                <rect x="92" y="250" width="8" height="160" rx="4" fill="#1BA8C7" />
+                <rect x="74" y="242" width="44" height="12" rx="6" fill="#0B2A4A" />
+              </svg>
+              <div class="hero-badge">
+                <span class="hero-badge-icon" aria-hidden="true">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="20 6 9 17 4 12" />
+                  </svg>
+                </span>
+                <span>Trusted Home Cleaning, Lahore</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ====================================================================
+           2. SERVICE CARDS SECTION
+           ==================================================================== -->
+      <section class="services-section reveal" aria-labelledby="services-heading">
+        <div class="container">
+          <div class="section-header">
+            <h2 id="services-heading" class="section-title">Our Deep Cleaning Services</h2>
+            <p class="section-subtitle">
+              Transparent per-unit pricing using commercial-grade equipment and surface-safe solutions.
+            </p>
+          </div>
+
+          <!-- Populated cleanly from the SERVICES config object in JS -->
+          <div id="services-grid" class="services-grid"></div>
+
+          <p class="services-note">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <circle cx="12" cy="12" r="10" />
+              <line x1="12" y1="16" x2="12" y2="12" />
+              <line x1="12" y1="8" x2="12.01" y2="8" />
+            </svg>
+            <span>Note: We do not clean walls/ceilings to protect your paint.</span>
+          </p>
+        </div>
+      </section>
+
+      <!-- ====================================================================
+           3. COST CALCULATOR + 4. ADDRESS + 5. PHONE + 6. WHATSAPP BUTTON
+           ==================================================================== -->
+      <section class="booking-section reveal" aria-labelledby="calculator-heading">
+        <div class="container booking-container">
+          <div class="section-header">
+            <h2 id="calculator-heading" class="section-title">Instant Cost Calculator</h2>
+            <p class="section-subtitle">
+              Adjust quantities below to estimate your cleaning package. Services above 0 are added automatically.
+            </p>
+          </div>
+
+          <!-- 3. COST CALCULATOR (No toggles, no checkboxes, [ - ] 0 [ + ] always visible) -->
+          <div class="calculator-card">
+            <div id="calculator-list" class="calculator-list"></div>
+
+            <div class="total-box" aria-live="polite">
+              <div class="total-row">
+                <span class="total-label">Estimated Total:</span>
+                <span id="estimated-total" class="total-amount">Rs. 0</span>
+              </div>
+              <p class="total-note">Final price confirmed after inspection.</p>
+            </div>
+          </div>
+
+          <!-- 4. ADDRESS INPUT, 5. PHONE NUMBER INPUT, 6. WHATSAPP BUTTON -->
+          <form id="booking-form" class="booking-form-card" novalidate>
+            <div class="field-group">
+              <label for="customer-address" class="field-label">Your Home Address</label>
+              <textarea
+                id="customer-address"
+                name="address"
+                class="field-input"
+                rows="2"
+                placeholder="House 14, Street 6, DHA Phase 5, Lahore"
+                autocomplete="street-address"
+                required
+              ></textarea>
+            </div>
+
+            <div class="field-group">
+              <label for="customer-phone" class="field-label">Your Phone Number</label>
+              <input
+                id="customer-phone"
+                name="phone"
+                type="tel"
+                inputmode="numeric"
+                class="field-input"
+                placeholder="03001234567"
+                maxlength="13"
+                autocomplete="tel"
+                required
+              />
+              <p class="field-hint">Pakistani mobile format: 03XXXXXXXXX (11 digits)</p>
+            </div>
+
+            <div id="form-error" class="form-error" role="alert" aria-live="assertive">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <circle cx="12" cy="12" r="10" />
+                <line x1="12" y1="8" x2="12" y2="12" />
+                <line x1="12" y1="16" x2="12.01" y2="16" />
+              </svg>
+              <span id="form-error-text"></span>
+            </div>
+
+            <button type="submit" id="whatsapp-btn" class="whatsapp-btn">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z" />
+              </svg>
+              <span>Book on WhatsApp</span>
+            </button>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <!-- ======================================================================
+         7. TINY FOOTER
+         ====================================================================== -->
+    <footer class="site-footer">
+      <p>© Elite Care Cleaners, Lahore</p>
+    </footer>
+
+    <!-- ====================================================================
+         ANIMATED CONFIRMATION POP-UP MODAL
+         ==================================================================== -->
+    <div
+      id="booking-modal"
+      class="modal-backdrop"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="modal-message"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="checkmark-wrap" aria-hidden="true">
+          <svg class="checkmark-svg" viewBox="0 0 52 52">
+            <circle class="checkmark-circle" cx="26" cy="26" r="24" />
+            <path class="checkmark-tick" d="M15 27l7 7 15-15" />
+          </svg>
+        </div>
+        <p id="modal-message" class="modal-message">
+          Aap ki booking request tayar hai!&nbsp;&nbsp;bas Send dabayein taake booking confirm ho jaye.
+        </p>
+        <button type="button" id="modal-close-btn" class="modal-close-btn">Close</button>
+      </div>
+    </div>
+
+    <!-- ======================================================================
+         VANILLA JAVASCRIPT: CONFIG, CALCULATOR, VALIDATION & WHATSAPP BOOKING
+         ====================================================================== -->
+    <script>
+      (function () {
+        'use strict';
+
+        /* --------------------------------------------------------------------
+           1. EASY-TO-EDIT CONFIGURATION (Prices, Units & Business WhatsApp)
+           -------------------------------------------------------------------- */
+        const BUSINESS_NUMBER = '92309 5694856';
+
+        const SERVICES = {
+          kitchen: {
+            id: 'kitchen',
+            title: 'Kitchen Deep Cleaning',
+            description: 'degreasing, hood, appliance exteriors, cabinets inside/out.',
+            price: 6000,
+            unitSingular: 'kitchen',
+            unitPlural: 'kitchens',
+            step: 1,
+            max: 50,
+            editableInput: false,
+            icon: '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7h18"/><path d="M5 7v11a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7"/><path d="M8 7V4a1 1 0 0 1 1-1h6a1 1 0 0 1 1 1v3"/><circle cx="9" cy="13" r="1"/><circle cx="15" cy="13" r="1"/></svg>',
+          },
+          washroom: {
+            id: 'washroom',
+            title: 'Washroom Cleaning',
+            description: 'tile scrubbing, grout detailing, mineral scale removal.',
+            price: 2500,
+            unitSingular: 'washroom',
+            unitPlural: 'washrooms',
+            step: 1,
+            max: 50,
+            editableInput: false,
+            icon: '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6 6.5 3.5a1.5 1.5 0 0 0-1-.5C4.68 3 4 3.68 4 4.5V17a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-5"/><line x1="10" y1="5" x2="8" y2="7"/><line x1="2" y1="12" x2="22" y2="12"/><line x1="7" y1="19" x2="7" y2="21"/><line x1="17" y1="19" x2="17" y2="21"/></svg>',
+          },
+          window: {
+            id: 'window',
+            title: 'Window Cleaning',
+            description: 'frame, sill and streak-free glass track.',
+            price: 500,
+            unitSingular: 'window',
+            unitPlural: 'windows',
+            step: 1,
+            max: 50,
+            editableInput: false,
+            icon: '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="12" y1="3" x2="12" y2="21"/><line x1="3" y1="12" x2="21" y2="12"/></svg>',
+          },
+          sofa: {
+            id: 'sofa',
+            title: 'Sofa Shampooing',
+            description: 'deep upholstery shampooing, stain extraction.',
+            price: 1500,
+            unitSingular: 'seat',
+            unitPlural: 'seats',
+            step: 1,
+            max: 50,
+            editableInput: false,
+            icon: '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 9V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v3"/><path d="M2 11v5a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-5a2 2 0 0 0-4 0v2H6v-2a2 2 0 0 0-4 0Z"/><path d="M4 18v2"/><path d="M20 18v2"/></svg>',
+          },
+          carpet: {
+            id: 'carpet',
+            title: 'Carpet Shampooing',
+            description: 'deep rotary shampooing.',
+            price: 40,
+            unitSingular: 'sq ft',
+            unitPlural: 'sq ft',
+            step: 50,
+            max: 50000,
+            editableInput: true,
+            icon: '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M7 9h10"/><path d="M7 12h10"/><path d="M7 15h10"/></svg>',
+          },
+          floor: {
+            id: 'floor',
+            title: 'Floor Scrubbing',
+            description: 'mechanical scrubbing and fixture care.',
+            price: 25,
+            unitSingular: 'sq ft',
+            unitPlural: 'sq ft',
+            step: 50,
+            max: 50000,
+            editableInput: true,
+            icon: '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v6"/><path d="M8 9h8l2 9H6l2-9Z"/><path d="M4 21h16"/></svg>',
+          },
+        };
+
+        /* --------------------------------------------------------------------
+           2. PURE CALCULATION, VALIDATION & MESSAGE BUILDER HELPERS
+           -------------------------------------------------------------------- */
+        function formatRs(amount) {
+          return 'Rs. ' + Number(amount || 0).toLocaleString('en-PK');
+        }
+
+        function sanitizeQuantity(rawValue, service) {
+          const str = String(rawValue == null ? '' : rawValue).trim();
+          if (!str) return 0;
+          const parsed = Number(str);
+          if (Number.isNaN(parsed) || parsed < 0) return 0;
+          return Math.min(Math.floor(parsed), service.max);
+        }
+
+        function computeLineTotal(service, qty) {
+          return service.price * qty;
+        }
+
+        function computeEstimatedTotal(servicesMap, quantitiesMap) {
+          return Object.keys(servicesMap).reduce(function (sum, key) {
+            const service = servicesMap[key];
+            const qty = quantitiesMap[key] || 0;
+            return sum + computeLineTotal(service, qty);
+          }, 0);
+        }
+
+        function normalizePakistaniPhone(rawPhone) {
+          return String(rawPhone || '')
+            .trim()
+            .replace(/[\s-]+/g, '');
+        }
+
+        function isValidPakistaniPhone(rawPhone) {
+          const normalized = normalizePakistaniPhone(rawPhone);
+          return /^03\d{9}$/.test(normalized);
+        }
+
+        function validateBookingForm(servicesMap, quantitiesMap, address, phone) {
+          const hasSelectedService = Object.keys(servicesMap).some(function (key) {
+            return (quantitiesMap[key] || 0) > 0;
+          });
+
+          if (!hasSelectedService) {
+            return {
+              valid: false,
+              field: 'calculator',
+              message: 'Please select at least one service by increasing its quantity above 0.',
+            };
+          }
+
+          if (!String(address || '').trim()) {
+            return {
+              valid: false,
+              field: 'address',
+              message: 'Please enter your full home address in Lahore.',
+            };
+          }
+
+          const rawPhone = String(phone || '').trim();
+          if (!rawPhone) {
+            return {
+              valid: false,
+              field: 'phone',
+              message: 'Please enter your mobile phone number (03XXXXXXXXX).',
+            };
+          }
+
+          if (!isValidPakistaniPhone(rawPhone)) {
+            return {
+              valid: false,
+              field: 'phone',
+              message: 'Please enter a valid 11-digit Pakistani mobile number starting with 03 (e.g. 03001234567).',
+            };
+          }
+
+          return { valid: true, field: null, message: '' };
+        }
+
+        function buildWhatsAppMessage(servicesMap, quantitiesMap, address, phone) {
+          const lines = [];
+          Object.keys(servicesMap).forEach(function (key) {
+            const service = servicesMap[key];
+            const qty = quantitiesMap[key] || 0;
+            if (qty > 0) {
+              const unitSuffix = service.editableInput ? ' ' + service.unitPlural : '';
+              lines.push('- ' + service.title + ' x' + qty + unitSuffix);
+            }
+          });
+
+          const total = computeEstimatedTotal(servicesMap, quantitiesMap);
+          const cleanAddress = String(address).trim();
+          const cleanPhone = normalizePakistaniPhone(phone);
+
+          return [
+            'Assalam o Alaikum, mujhe Elite Care Cleaners se is type ki cleaning chahiye:',
+            lines.join('\n'),
+            'Estimated Total: ' + formatRs(total),
+            'Address: ' + cleanAddress,
+            'Phone: ' + cleanPhone,
+            'Meherbani karke booking confirm kar dein.',
+          ].join('\n');
+        }
+
+        function buildWhatsAppUrl(businessNumber, message) {
+          const cleanDigits = String(businessNumber).replace(/\D/g, '');
+          return 'https://wa.me/' + cleanDigits + '?text=' + encodeURIComponent(message);
+        }
+
+        /* Export pure helpers when running under Node unit tests */
+        if (typeof globalThis !== 'undefined' && globalThis.__ELITE_CARE_TEST_HOOK__) {
+          globalThis.__ELITE_CARE_TEST_HOOK__({
+            BUSINESS_NUMBER: BUSINESS_NUMBER,
+            SERVICES: SERVICES,
+            formatRs: formatRs,
+            sanitizeQuantity: sanitizeQuantity,
+            computeLineTotal: computeLineTotal,
+            computeEstimatedTotal: computeEstimatedTotal,
+            normalizePakistaniPhone: normalizePakistaniPhone,
+            isValidPakistaniPhone: isValidPakistaniPhone,
+            validateBookingForm: validateBookingForm,
+            buildWhatsAppMessage: buildWhatsAppMessage,
+            buildWhatsAppUrl: buildWhatsAppUrl,
+          });
+        }
+
+        if (typeof document === 'undefined') {
+          return;
+        }
+
+        /* --------------------------------------------------------------------
+           3. STATE & DOM REFERENCES
+           -------------------------------------------------------------------- */
+        const quantities = {};
+        Object.keys(SERVICES).forEach(function (key) {
+          quantities[key] = 0;
+        });
+
+        const servicesGridEl = document.getElementById('services-grid');
+        const calculatorListEl = document.getElementById('calculator-list');
+        const estimatedTotalEl = document.getElementById('estimated-total');
+        const bookingFormEl = document.getElementById('booking-form');
+        const addressInputEl = document.getElementById('customer-address');
+        const phoneInputEl = document.getElementById('customer-phone');
+        const formErrorEl = document.getElementById('form-error');
+        const formErrorTextEl = document.getElementById('form-error-text');
+        const modalEl = document.getElementById('booking-modal');
+        const modalCloseBtnEl = document.getElementById('modal-close-btn');
+
+        let displayedTotal = 0;
+        let totalAnimFrame = null;
+
+        /* --------------------------------------------------------------------
+           4. RENDER SERVICE CARDS FROM SINGLE CONFIG OBJECT
+           -------------------------------------------------------------------- */
+        function renderServiceCards() {
+          const fragment = document.createDocumentFragment();
+          Object.keys(SERVICES).forEach(function (key) {
+            const service = SERVICES[key];
+            const card = document.createElement('article');
+            card.className = 'service-card';
+
+            card.innerHTML =
+              '<div>' +
+              '<div class="service-icon-box">' +
+              service.icon +
+              '</div>' +
+              '<h3 class="service-name">' +
+              service.title +
+              '</h3>' +
+              '<p class="service-desc">' +
+              service.description +
+              '</p>' +
+              '</div>' +
+              '<div class="service-price">' +
+              formatRs(service.price) +
+              ' <span class="service-price-unit">per ' +
+              service.unitSingular +
+              '</span>' +
+              '</div>';
+
+            fragment.appendChild(card);
+          });
+          servicesGridEl.appendChild(fragment);
+        }
+
+        /* --------------------------------------------------------------------
+           5. RENDER COST CALCULATOR ROWS (ALL VISIBLE AT 0, NO TOGGLES)
+           -------------------------------------------------------------------- */
+        function renderCalculatorRows() {
+          const fragment = document.createDocumentFragment();
+          Object.keys(SERVICES).forEach(function (key) {
+            const service = SERVICES[key];
+            const row = document.createElement('div');
+            row.className = 'calc-row';
+            row.setAttribute('data-service-row', service.id);
+
+            const middleControl = service.editableInput
+              ? '<input type="number" inputmode="numeric" min="0" max="' +
+                service.max +
+                '" value="0" class="stepper-input" data-qty-input="' +
+                service.id +
+                '" aria-label="' +
+                service.title +
+                ' in ' +
+                service.unitPlural +
+                '" />'
+              : '<span class="stepper-value" data-qty-display="' +
+                service.id +
+                '">0</span>';
+
+            row.innerHTML =
+              '<div class="calc-info">' +
+              '<div class="calc-title">' +
+              service.title +
+              '</div>' +
+              '<div class="calc-meta">' +
+              formatRs(service.price) +
+              ' / ' +
+              service.unitSingular +
+              ' · <span class="calc-meta-unit">' +
+              service.unitPlural +
+              '</span>' +
+              '</div>' +
+              '</div>' +
+              '<div class="calc-controls-wrap">' +
+              '<div class="stepper" role="group" aria-label="' +
+              service.title +
+              ' quantity">' +
+              '<button type="button" class="stepper-btn" data-action="dec" data-service="' +
+              service.id +
+              '" aria-label="Decrease ' +
+              service.title +
+              '" disabled>−</button>' +
+              middleControl +
+              '<button type="button" class="stepper-btn" data-action="inc" data-service="' +
+              service.id +
+              '" aria-label="Increase ' +
+              service.title +
+              '">+</button>' +
+              '</div>' +
+              '<div class="calc-line-total" data-line-total="' +
+              service.id +
+              '">—</div>' +
+              '</div>';
+
+            fragment.appendChild(row);
+          });
+          calculatorListEl.appendChild(fragment);
+        }
+
+        /* --------------------------------------------------------------------
+           6. ANIMATED TOTAL COUNTER & ROW STATE SYNCHRONIZATION
+           -------------------------------------------------------------------- */
+        function animateEstimatedTotal(targetTotal) {
+          if (totalAnimFrame) {
+            cancelAnimationFrame(totalAnimFrame);
+          }
+
+          const prefersReduced =
+            window.matchMedia &&
+            window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+          if (prefersReduced || displayedTotal === targetTotal) {
+            displayedTotal = targetTotal;
+            estimatedTotalEl.textContent = formatRs(targetTotal);
+            return;
+          }
+
+          const startTotal = displayedTotal;
+          const diff = targetTotal - startTotal;
+          const duration = 280;
+          const startTime = performance.now();
+
+          function step(now) {
+            const elapsed = now - startTime;
+            const progress = Math.min(elapsed / duration, 1);
+            // Smooth easeOutCubic curve
+            const eased = 1 - Math.pow(1 - progress, 3);
+            const current = Math.round(startTotal + diff * eased);
+            displayedTotal = current;
+            estimatedTotalEl.textContent = formatRs(current);
+
+            if (progress < 1) {
+              totalAnimFrame = requestAnimationFrame(step);
+            } else {
+              displayedTotal = targetTotal;
+              estimatedTotalEl.textContent = formatRs(targetTotal);
+              totalAnimFrame = null;
+            }
+          }
+
+          totalAnimFrame = requestAnimationFrame(step);
+        }
+
+        function updateRowUI(serviceId, skipInputWrite) {
+          const service = SERVICES[serviceId];
+          const qty = quantities[serviceId];
+          const row = calculatorListEl.querySelector('[data-service-row="' + serviceId + '"]');
+          const decBtn = row.querySelector('[data-action="dec"]');
+          const incBtn = row.querySelector('[data-action="inc"]');
+          const lineTotalEl = row.querySelector('[data-line-total="' + serviceId + '"]');
+
+          if (qty > 0) {
+            row.classList.add('is-active');
+            lineTotalEl.textContent = formatRs(computeLineTotal(service, qty));
+          } else {
+            row.classList.remove('is-active');
+            lineTotalEl.textContent = '—';
+          }
+
+          decBtn.disabled = qty <= 0;
+          incBtn.disabled = qty >= service.max;
+
+          if (service.editableInput) {
+            const inputEl = row.querySelector('[data-qty-input="' + serviceId + '"]');
+            if (!skipInputWrite) {
+              inputEl.value = String(qty);
+            }
+          } else {
+            const displayEl = row.querySelector('[data-qty-display="' + serviceId + '"]');
+            displayEl.textContent = String(qty);
+          }
+
+          const newTotal = computeEstimatedTotal(SERVICES, quantities);
+          animateEstimatedTotal(newTotal);
+
+          if (newTotal > 0 && formErrorEl.classList.contains('is-visible')) {
+            clearError();
+          }
+        }
+
+        /* --------------------------------------------------------------------
+           7. CALCULATOR EVENT HANDLERS
+           -------------------------------------------------------------------- */
+        calculatorListEl.addEventListener('click', function (event) {
+          const btn = event.target.closest('button[data-action]');
+          if (!btn) return;
+
+          const serviceId = btn.getAttribute('data-service');
+          const action = btn.getAttribute('data-action');
+          const service = SERVICES[serviceId];
+          if (!service) return;
+
+          const current = quantities[serviceId];
+          if (action === 'inc') {
+            quantities[serviceId] = Math.min(current + service.step, service.max);
+          } else if (action === 'dec') {
+            if (current <= 0) return;
+            quantities[serviceId] = Math.max(current - service.step, 0);
+          }
+
+          updateRowUI(serviceId, false);
+        });
+
+        calculatorListEl.addEventListener('input', function (event) {
+          const input = event.target.closest('input[data-qty-input]');
+          if (!input) return;
+
+          const serviceId = input.getAttribute('data-qty-input');
+          const service = SERVICES[serviceId];
+          if (!service) return;
+
+          const cleaned = sanitizeQuantity(input.value, service);
+          quantities[serviceId] = cleaned;
+          if (input.value !== '' && Number(input.value) !== cleaned) {
+            input.value = String(cleaned);
+          }
+          updateRowUI(serviceId, true);
+        });
+
+        calculatorListEl.addEventListener(
+          'blur',
+          function (event) {
+            const input = event.target.closest('input[data-qty-input]');
+            if (!input) return;
+
+            const serviceId = input.getAttribute('data-qty-input');
+            const service = SERVICES[serviceId];
+            if (!service) return;
+
+            quantities[serviceId] = sanitizeQuantity(input.value, service);
+            updateRowUI(serviceId, false);
+          },
+          true
+        );
+
+        /* --------------------------------------------------------------------
+           8. FORM VALIDATION, WHATSAPP LAUNCH & MODAL CONTROLS
+           -------------------------------------------------------------------- */
+        function showError(message, field) {
+          formErrorTextEl.textContent = message;
+          formErrorEl.classList.add('is-visible');
+
+          addressInputEl.classList.toggle('is-invalid', field === 'address');
+          phoneInputEl.classList.toggle('is-invalid', field === 'phone');
+
+          if (field === 'address') {
+            addressInputEl.focus();
+          } else if (field === 'phone') {
+            phoneInputEl.focus();
+          } else if (field === 'calculator') {
+            calculatorListEl.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          }
+        }
+
+        function clearError() {
+          formErrorEl.classList.remove('is-visible');
+          formErrorTextEl.textContent = '';
+          addressInputEl.classList.remove('is-invalid');
+          phoneInputEl.classList.remove('is-invalid');
+        }
+
+        addressInputEl.addEventListener('input', clearError);
+        phoneInputEl.addEventListener('input', clearError);
+
+        function openBookingModal() {
+          modalEl.classList.add('is-open');
+          modalEl.setAttribute('aria-hidden', 'false');
+          modalCloseBtnEl.focus();
+        }
+
+        function closeBookingModal() {
+          modalEl.classList.remove('is-open');
+          modalEl.setAttribute('aria-hidden', 'true');
+        }
+
+        modalCloseBtnEl.addEventListener('click', closeBookingModal);
+        modalEl.addEventListener('click', function (event) {
+          if (event.target === modalEl) {
+            closeBookingModal();
+          }
+        });
+
+        document.addEventListener('keydown', function (event) {
+          if (event.key === 'Escape' && modalEl.classList.contains('is-open')) {
+            closeBookingModal();
+          }
+        });
+
+        function triggerWhatsAppLink(url) {
+          const anchor = document.createElement('a');
+          anchor.href = url;
+          anchor.target = '_blank';
+          anchor.rel = 'noopener noreferrer';
+          anchor.style.display = 'none';
+          document.body.appendChild(anchor);
+          anchor.click();
+          document.body.removeChild(anchor);
+        }
+
+        bookingFormEl.addEventListener('submit', function (event) {
+          event.preventDefault();
+
+          const address = addressInputEl.value;
+          const phone = phoneInputEl.value;
+          const validation = validateBookingForm(SERVICES, quantities, address, phone);
+
+          if (!validation.valid) {
+            showError(validation.message, validation.field);
+            return;
+          }
+
+          clearError();
+          const message = buildWhatsAppMessage(SERVICES, quantities, address, phone);
+          const whatsappUrl = buildWhatsAppUrl(BUSINESS_NUMBER, message);
+
+          triggerWhatsAppLink(whatsappUrl);
+          openBookingModal();
+        });
+
+        /* --------------------------------------------------------------------
+           9. SCROLL REVEAL OBSERVER (WITH SAFE FALLBACK)
+           -------------------------------------------------------------------- */
+        function initScrollReveal() {
+          const sections = document.querySelectorAll('.reveal');
+          if (!('IntersectionObserver' in window)) {
+            sections.forEach(function (el) {
+              el.classList.add('is-visible');
+            });
+            return;
+          }
+
+          const observer = new IntersectionObserver(
+            function (entries) {
+              entries.forEach(function (entry) {
+                if (entry.isIntersecting) {
+                  entry.target.classList.add('is-visible');
+                  observer.unobserve(entry.target);
+                }
+              });
+            },
+            { threshold: 0.08, rootMargin: '0px 0px -24px 0px' }
+          );
+
+          sections.forEach(function (el) {
+            const rect = el.getBoundingClientRect();
+            if (rect.top < window.innerHeight * 0.95) {
+              el.classList.add('is-visible');
+            } else {
+              observer.observe(el);
+            }
+          });
+        }
+
+        /* Initialize page */
+        renderServiceCards();
+        renderCalculatorRows();
+        initScrollReveal();
+      })();
+    </script>
+  </body>
+</html>
